@@ -22,7 +22,7 @@ const ReviewCard = ({ review, index }) => {
         </div>
         <div className="ml-4">
           <h4 className="text-lg font-bold text-slate-800">{review.name}</h4>
-          <p className="text-xs text-slate-400 mt-1">Posted on: {formatDate(review.timestamp)}</p>
+          <p className="text-xs text-slate-400 mt-1">{formatDate(review.timestamp)}</p>
         </div>
       </div>
       <p className="text-slate-600 mt-4">"{review.comment}"</p>

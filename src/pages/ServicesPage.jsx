@@ -21,7 +21,7 @@ const services = [
 const ServicesPage = () => (
     <PageWrapper>
         <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">Services</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">Hizmetler</h1>
             <p className="text-lg text-secondary mb-12">How I can help you on your journey.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

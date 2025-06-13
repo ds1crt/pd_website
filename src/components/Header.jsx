@@ -22,23 +22,23 @@ const Header = () => {
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0">
                         <RouterNavLink to="/" className="text-2xl font-bold text-primary">
-                            Psk. Dan. Berra Ozcakal Shahin
+                            Psk. Dan. Berra Shahin
                         </RouterNavLink>
                     </div>
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            <AppNavLink to="/">Home</AppNavLink>
-                            <AppNavLink to="/about">About</AppNavLink>
-                            <AppNavLink to="/services">Services</AppNavLink>
-                            <AppNavLink to="/projects">Projects</AppNavLink>
+                            <AppNavLink to="/">Ana Sayfa</AppNavLink>
+                            <AppNavLink to="/about">Hakkımda</AppNavLink>
+                            <AppNavLink to="/services">Hizmetler</AppNavLink>
+                            <AppNavLink to="/projects">Projeler</AppNavLink>
                             <AppNavLink to="/blog">Blog</AppNavLink>
-                            <AppNavLink to="/reviews">Reviews</AppNavLink>
-                            <AppNavLink to="/contact">Contact</AppNavLink>
+                            <AppNavLink to="/reviews">Görüşler</AppNavLink>
+                            <AppNavLink to="/contact">İletişim</AppNavLink>
                         </div>
                     </div>
                     <div className="-mr-2 flex md:hidden">
                         <button onClick={toggleMenu} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-secondary focus:outline-none">
-                            <span className="sr-only">Open main menu</span>
+                            <span className="sr-only">Ana Menü</span>
                             {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
                         </button>
                     </div>
@@ -53,13 +53,13 @@ const Header = () => {
                         className="md:hidden"
                     >
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <AppNavLink to="/">Home</AppNavLink>
-                            <AppNavLink to="/about">About</AppNavLink>
-                            <AppNavLink to="/services">Services</AppNavLink>
-                            <AppNavLink to="/projects">Projects</AppNavLink>
+                            <AppNavLink to="/">Ana Sayfa</AppNavLink>
+                            <AppNavLink to="/about">Hakkımda</AppNavLink>
+                            <AppNavLink to="/services">Hizmetler</AppNavLink>
+                            <AppNavLink to="/projects">Projeler</AppNavLink>
                             <AppNavLink to="/blog">Blog</AppNavLink>
-                            <AppNavLink to="/reviews">Reviews</AppNavLink>
-                            <AppNavLink to="/contact">Contact</AppNavLink>
+                            <AppNavLink to="/reviews">Görüşler</AppNavLink>
+                            <AppNavLink to="/contact">İletişim</AppNavLink>
                         </div>
                     </motion.div>
                 )}
