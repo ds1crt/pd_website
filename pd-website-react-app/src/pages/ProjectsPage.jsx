@@ -33,7 +33,7 @@ const projects = [
 const ProjectsPage = () => (
     <PageWrapper>
         <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">My Projects</h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">Projelerim</h1>
             <p className="text-lg text-secondary mb-12">A collection of my work.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
