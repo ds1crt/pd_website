@@ -26,8 +26,8 @@ const ClientReviewsPage = () => {
     return (
         <PageWrapper>
             <div className="text-center">
-                <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">Client Reviews</h1>
-                <p className="text-lg text-secondary mb-12">What my clients are saying about their experience.</p>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">Danışanların Görüşleri</h1>
+                <p className="text-lg text-secondary mb-12">Danışanlarımın aldıkları hizmet hakkındaki değerlendirmeleri.</p>
             </div>
             <div className="mb-12">
                 <ReviewForm />

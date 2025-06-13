@@ -25,7 +25,7 @@ const AboutPage = () => (
           Çocuk, Ergen ve Ebeveyn
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-          <NavLink to="/contact" className="inline-flex items-center gap-2 px-8 py-3 font-semibold bg-sky-500 text-white rounded-lg shadow-lg hover:bg-sky-600"><FiSend /> Get In Touch</NavLink>
+          <NavLink to="/contact" className="inline-flex items-center gap-2 px-8 py-3 font-semibold bg-sky-500 text-white rounded-lg shadow-lg hover:bg-sky-600"><FiSend /> İletişime Geçin</NavLink>
         </motion.div>
       </section>
     </div>
