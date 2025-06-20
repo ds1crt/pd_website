@@ -13,9 +13,13 @@ const PageWrapper = ({ children }) => (
 );
 
 const services = [
-    { title: 'Individual Therapy', description: 'One-on-one sessions to address your personal challenges.' },
-    { title: 'Couples Counseling', description: 'Helping couples navigate their relationship challenges.' },
-    { title: 'Family Therapy', description: 'Working with families to improve communication and resolve conflicts.' },
+    { title: 'Çocuk Danışmanlığı', description: 'One-on-one sessions to address your personal challenges.' },
+    { title: 'Ergen Danışmanlığı', description: 'Helping couples navigate their relationship challenges.' },
+    { title: 'Ebeveyn Danışmanlığı', description: 'Working with families to improve communication and resolve conflicts.' },
+    { title: 'Testler', description: 'Working with families to improve communication and resolve conflicts.' },
+    { title: 'Online Danışmanlık', description: 'Working with families to improve communication and resolve conflicts.' },
+
+
 ];
 
 const ServicesPage = () => (
