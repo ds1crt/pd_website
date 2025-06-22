@@ -21,9 +21,6 @@ const Footer = ({ userId }) => (
                     <a href="https://www.linkedin.com/in/berraozcakal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent transition-colors"><FaLinkedin size={20} /></a>
                     <a href="https://www.instagram.com/pd.berraozcakal/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent transition-colors"><FaInstagram size={20} /></a>
                 </div>
-                <div className="mt-6 text-sm text-accent">
-                    <p>Kullanıcı ID: {userId}</p>
-                </div>
             </div>
         </div>
     </footer>

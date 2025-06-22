@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { MessageProvider } from './contexts/MessageContext';
-import { ensureAuth } from './firebase/firebaseConfig';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage'; // IMPORT the new HomePage
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ProjectsPage from './pages/ProjectsPage';
@@ -19,7 +19,8 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<AboutPage />} />
+        {/* MODIFIED: The root path now uses HomePage */}
+        <Route path="/" element={<HomePage />} /> 
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
@@ -33,19 +34,6 @@ const AnimatedRoutes = () => {
 };
 
 function App() {
-  const [userIdForFooter, setUserIdForFooter] = useState('Loading...');
-
-  useEffect(() => {
-    ensureAuth()
-      .then(user => {
-        setUserIdForFooter(user ? user.uid : 'N/A (Anonymous)');
-      })
-      .catch(error => {
-        console.error("Auth failed:", error);
-        setUserIdForFooter('Auth Error');
-      });
-  }, []);
-
   return (
     <Router>
       <MessageProvider>
@@ -54,7 +42,7 @@ function App() {
           <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <AnimatedRoutes />
           </main>
-          <Footer userId={userIdForFooter} />
+          <Footer />
         </div>
       </MessageProvider>
     </Router>
