@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getReviews } from '../firebase/firebaseConfig';
 import ReviewCard from '../components/ReviewCard';
-import ReviewForm from '../components/ReviewForm';
+// REMOVED: No longer importing ReviewForm
 
 const PageWrapper = ({ children }) => (
     <motion.div
@@ -29,12 +29,12 @@ const ClientReviewsPage = () => {
                 <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-4">Danışanların Görüşleri</h1>
                 <p className="text-lg text-secondary mb-12">Danışanlarımın aldıkları hizmet hakkındaki değerlendirmeleri.</p>
             </div>
-            <div className="mb-12">
-                <ReviewForm />
-            </div>
+            
+            {/* REMOVED: The div containing the ReviewForm has been deleted from here. */}
+            
             <div className="space-y-8">
-                {reviews.map(review => (
-                    <ReviewCard key={review.id} review={review} />
+                {reviews.map((review, index) => ( // Added index for key prop
+                    <ReviewCard key={review.id || index} review={review} /> // Used index as a fallback key
                 ))}
             </div>
         </PageWrapper>
