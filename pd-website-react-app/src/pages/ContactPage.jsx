@@ -19,14 +19,36 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      showMessage('Thank you for your message!', 'success');
-      setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+
+    // --- Replace this with your actual Cloud Function URL ---
+    const functionUrl = 'https://sendcontactemail-unwfir7x4q-nw.a.run.app'; 
+
+    try {
+        const response = await fetch(functionUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) {
+            // If the server response is not OK, throw an error
+            throw new Error('Something went wrong. Please try again.');
+        }
+        
+        // Show success message and reset form
+        showMessage('Thank you for your message!', 'success');
+        setFormData({ name: '', email: '', message: '' });
+
+    } catch (error) {
+        // Show error message
+        showMessage(error.message, 'error');
+    } finally {
+        // Re-enable the submit button
+        setIsSubmitting(false);
+    }
   };
   return (
     <PageWrapper>
