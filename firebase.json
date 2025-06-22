@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "pd-website-react-app/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,5 +12,14 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5033
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
   }
 }
