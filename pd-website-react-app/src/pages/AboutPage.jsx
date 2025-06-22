@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaGraduationCap, FaCertificate, FaBook, FaHeart } from 'react-icons/fa';
+// Import your profile photo
+import profilePhoto from '../assets/profile-photo.jpg';
 
 const PageWrapper = ({ children }) => (
   <motion.div
@@ -12,9 +15,9 @@ const PageWrapper = ({ children }) => (
   </motion.div>
 );
 
-const Section = ({ children, delay = 0, className = '' }) => ( // Added className prop
+const Section = ({ children, delay = 0, className = '' }) => (
     <motion.div
-        className={className} // Apply className here
+        className={className}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
@@ -28,14 +31,27 @@ const AboutPage = () => (
   <PageWrapper>
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-left">
         <Section>
-            <p className="text-lg text-secondary leading-relaxed mb-12">
-            Dokuz Eylül Üniversitesi Psikolojik Danışmanlık ve Rehberlik bölümünden yüksek onur derecesiyle mezun oldum. Mezuniyetimin ardından İzmir’de anaokulu danışmanlığının yanı sıra çocuk, ergen ve ebeveynlere çeşitli konularda danışmanlık verdim. Şu anda online çalışmalarımın yanında Bursa’da yüz yüze çalışmalarımı sürdürmekteyim.
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">
+                <div className="w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto">
+                    {/* --- IMAGE MODIFIED --- */}
+                    <img 
+                        src={profilePhoto} 
+                        alt="Berra Shahin" 
+                        className="rounded-full shadow-2xl object-cover w-full aspect-square" 
+                    />
+                </div>
+                
+                <p className="text-lg text-secondary leading-relaxed">
+                    Dokuz Eylül Üniversitesi Psikolojik Danışmanlık ve Rehberlik bölümünden yüksek onur derecesiyle mezun oldum. Mezuniyetimin ardından İzmir’de anaokulu danışmanlığının yanı sıra çocuk, ergen ve ebeveynlere çeşitli konularda danışmanlık verdim. Şu anda online çalışmalarımın yanında Bursa’da yüz yüze çalışmalarımı sürdürmekteyim.
+                </p>
+            </div>
         </Section>
+        {/* --- END OF MODIFIED SECTION --- */}
         
-        {/* MODIFIED: Added mt-16 for margin-top */}
         <Section delay={0.2} className="mt-16">
-            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2">EĞİTİM</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2 flex items-center gap-3">
+                <FaGraduationCap /> EĞİTİM
+            </h2>
             <div className="space-y-4">
                 <div>
                     <h3 className="text-xl font-semibold text-secondary">Dokuz Eylül Üniversitesi | İzmir</h3>
@@ -50,9 +66,10 @@ const AboutPage = () => (
             </div>
         </Section>
 
-        {/* MODIFIED: Changed mt-12 to mt-16 for consistency */}
         <Section delay={0.4} className="mt-16">
-            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2">EĞİTİM VE SERTİFİKALAR</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2 flex items-center gap-3">
+                <FaCertificate /> EĞİTİM VE SERTİFİKALAR
+            </h2>
             <ul className="list-disc list-inside space-y-2 text-secondary">
                 <li>Çocuk ve Ergen Odaklı BDT Uygulamaları Eğitimi - Dr. Nevin Dölek</li>
                 <li>Moxo Dikkat Testi Uygulayıcı Eğitimi - Türk PDR Derneği & Moxo Türkiye</li>
@@ -67,17 +84,27 @@ const AboutPage = () => (
             </ul>
         </Section>
 
-        {/* MODIFIED: Changed mt-12 to mt-16 for consistency */}
         <Section delay={0.6} className="mt-16">
-            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2">AKADEMİK YAYINLAR</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2 flex items-center gap-3">
+                <FaBook /> AKADEMİK YAYINLAR
+            </h2>
             <p className="text-secondary">
-            6 Şubat 2023 Kahramanmaraş Depremlerinden Etkilenen Çocukların Yaşam Doyumları ve Umut Düzeylerinin İncelenmesi Üzerine Nicel Bir Araştırma. Araştırma Dokuz Eylül Üniversitesi Buca Eğitim Fakültesi Dergisi’nin 63. sayısında yayınlanmıştır, ayrıca 2. Uluslararası Ege Sosyal ve Beşeri Bilimler Kongresi’nde sözlü bildiri olarak sunulmuştur. (Doi linkine buradan ulaşabilirsiniz)
+            6 Şubat 2023 Kahramanmaraş Depremlerinden Etkilenen Çocukların Yaşam Doyumları ve Umut Düzeylerinin İncelenmesi Üzerine Nicel Bir Araştırma. Araştırma Dokuz Eylül Üniversitesi Buca Eğitim Fakültesi Dergisi’nin 63. sayısında yayınlanmıştır, ayrıca 2. Uluslararası Ege Sosyal ve Beşeri Bilimler Kongresi’nde sözlü bildiri olarak sunulmuştur. 
+            <a 
+                href="https://doi.org/10.53444/deubefd.1559745" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sky-500 hover:underline ml-1"
+            >
+                (Doi linkine buradan ulaşabilirsiniz)
+            </a>
             </p>
         </Section>
 
-        {/* MODIFIED: Changed mt-12 to mt-16 for consistency */}
         <Section delay={0.8} className="mt-16">
-            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2">GÖNÜLLÜ ÇALIŞMALAR</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6 border-b-2 border-accent pb-2 flex items-center gap-3">
+                <FaHeart /> GÖNÜLLÜ ÇALIŞMALAR
+            </h2>
             <ul className="list-disc list-inside space-y-2 text-secondary">
                 <li>UCİM Çocuk İstismarı ile Mücadele Derneği (2019-Halen) - Bursa Koordinatörlüğü</li>
                 <li>Dokuz Eylül Üniversitesi Çocuk Hakları Topluluğu - Yönetim Kurulu Başkanı (2021-2023)</li>

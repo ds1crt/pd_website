@@ -2,7 +2,6 @@ import React from 'react'; // REMOVED: { useState, useContext }
 import { motion } from 'framer-motion';
 // REMOVED: FiSend, FiUser, FiMail, FiMessageSquare
 import { FiPhone, FiMail } from 'react-icons/fi'; 
-// REMOVED: MessageContext
 
 const PageWrapper = ({ children }) => (
   <motion.div
